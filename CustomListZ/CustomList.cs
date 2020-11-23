@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListZ
 {
-    public class CustomList
+    public class CustomList<T>
     {
         //Member Variables
 
