@@ -49,9 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOperator.cs" />
+    <Compile Include="AddMethod.cs" />
+    <Compile Include="Indexer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RemoveOperator.cs" />
+    <Compile Include="RemoveMethod.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

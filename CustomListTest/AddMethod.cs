@@ -111,7 +111,7 @@ namespace CustomListTest
         [TestMethod]
         public void Add_Bool_CapacityOfEight()
         {
-            CustomList<string> boolList = new CustomList();
+            CustomList<bool> boolList = new CustomList();
             bool answer1 = true;
             bool answer2 = true;
             bool answer3 = false;
