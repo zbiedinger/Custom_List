@@ -10,8 +10,8 @@ namespace CustomListZ
     {
         //Member Variables
         T[] _items;
-        int count;
-        int capacity;
+        public int count;
+        public int capacity;
 
         //Constructor
         public CustomList()
@@ -22,6 +22,12 @@ namespace CustomListZ
         }
 
         //Member Methods
+        public void Add(T valueToAdd)
+        {
+            _items[count] = valueToAdd;
+            count++;
+
+        }
 
     }
 }

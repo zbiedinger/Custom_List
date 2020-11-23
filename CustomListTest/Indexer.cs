@@ -10,7 +10,7 @@ namespace CustomListTest
         [TestMethod]
         public void Indexer_PositiveInt_FirstIndexIsFive()
         {
-            CustomList<int> intList = new CustomList();
+            CustomList<int> intList = new CustomList<int>();
             int num1 = 5;
             
             int expected = 5;
@@ -27,7 +27,7 @@ namespace CustomListTest
         [TestMethod]
         public void Indexer_PositiveInt_ThirdIndexIsSix()
         {
-            CustomList<int> intList = new CustomList();
+            CustomList<int> intList = new CustomList<int>();
             int num1 = 5;
             int num2 = -2;
             int num3 = 6;
@@ -50,7 +50,7 @@ namespace CustomListTest
         [TestMethod]
         public void Indexer_String_SecondIndexIsHowdy()
         {
-            CustomList<string> stringtList = new CustomList();
+            CustomList<string> stringtList = new CustomList<string>();
             string blurb = "Sub Bro";
             string blurb2 = "Howdy";
             string blurb3 = "Hi Cutie";
@@ -74,7 +74,7 @@ namespace CustomListTest
         public void Indexer_StringsRemoved_SecondIndexIsHi()
         {
             //Arrange
-            CustomList<string> stringtList = new CustomList();
+            CustomList<string> stringtList = new CustomList<string>();
             string blurb = "Sub Bro";
             string blurb2 = "Howdy";
             string blurb3 = "Hi Cutie";
@@ -102,7 +102,7 @@ namespace CustomListTest
         public void Indexer_BoolsRemoved_SecondIndexIsFalse()
         {
             //Arrange
-            CustomList<bool> boolList = new CustomList();
+            CustomList<bool> boolList = new CustomList<bool>();
             bool answer1 = true;
             bool answer2 = true;
             bool answer3 = false;

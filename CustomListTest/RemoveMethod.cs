@@ -11,7 +11,7 @@ namespace CustomListTest
         public void Remove_PostiveInteger_CountOfOne()
         {
             //Arrange
-            CustomList<int> intList = new CustomList();
+            CustomList<int> intList = new CustomList<int>();
             int num1 = 9;
             int num2 = 2;
             int expected = 1;
@@ -31,7 +31,7 @@ namespace CustomListTest
         public void Remove_NegativeInteger_CountOftwo()
         {
             //Arrange
-            CustomList<int> intList = new CustomList();
+            CustomList<int> intList = new CustomList<int>();
             int num1 = -9;
             int num2 = -2;
             int num3 = -3;
@@ -56,7 +56,7 @@ namespace CustomListTest
         public void Remove_string_CountOfZero()
         {
             //Arrange
-            CustomList<string> stringList = new CustomList();
+            CustomList<string> stringList = new CustomList<string>();
             string blurb = "Sub Bro";
             int expected = 0;
             int actual;
@@ -74,7 +74,7 @@ namespace CustomListTest
         public void Remove_string_TryToRemoveStringThatsNotThere()
         {
             //Arrange
-            CustomList<string> stringList = new CustomList();
+            CustomList<string> stringList = new CustomList<string>();
             string blurb = "Sub Bro";
             string blurb2 = "Howdy";
             string blurb3 = "Hi Cutie";
@@ -99,7 +99,7 @@ namespace CustomListTest
         public void Remove_string_TryToRemoveStringThatsNotThere()
         {
             //Arrange
-            CustomList<string> stringList = new CustomList();
+            CustomList<string> stringList = new CustomList<string>();
             string blurb = "Sub Bro";
             string blurb2 = "Howdy";
             string blurb3 = "Hi Cutie";
@@ -120,7 +120,7 @@ namespace CustomListTest
         [TestMethod]
         public void Remove_Bool_LastIsFalse()
         {
-            CustomList<bool> boolList = new CustomList();
+            CustomList<bool> boolList = new CustomList<bool>();
             bool answer1 = true;
             bool answer2 = true;
             bool answer3 = false;
