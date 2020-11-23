@@ -22,11 +22,47 @@ namespace CustomListZ
         }
 
         //Member Methods
-        public void Add(T valueToAdd)
+        public bool Add(T valueToAdd)
         {
-            _items[count] = valueToAdd;
-            count++;
+            bool couldAdd = false;
+            
+            if(count < capacity)
+            {
+                _items[count] = valueToAdd;
+                count++;
+                couldAdd = true;
+            }
+            else
+            {
+                capacity *= 2;
+                T[] temp = new T[capacity];
 
+                for (int i = 0; i < count-1; i++)
+                {
+                    temp[i] = _items[i];
+                }
+
+                _items = new T[capacity];
+
+                for (int i = 0; i < count - 1; i++)
+                {
+                    _items[i] = temp[i];
+                }
+
+                temp[count] = valueToAdd;
+                count++;
+                couldAdd = true;
+            }
+            
+            return couldAdd;
+        }
+
+        public bool Remove(T valueToRemove)
+        {
+            bool couldRemove = true;
+
+            count--;
+            return couldRemove;
         }
 
     }

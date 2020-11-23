@@ -96,7 +96,7 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Remove_string_TryToRemoveStringThatsNotThere()
+        public void Remove_string_RemoveStringThatsNotThere()
         {
             //Arrange
             CustomList<string> stringList = new CustomList<string>();
@@ -117,30 +117,30 @@ namespace CustomListTest
             Assert.IsFalse(stringList.Remove(blurb5));
         }
 
-        [TestMethod]
-        public void Remove_Bool_LastIsFalse()
-        {
-            CustomList<bool> boolList = new CustomList<bool>();
-            bool answer1 = true;
-            bool answer2 = true;
-            bool answer3 = false;
-            bool answer4 = true;
-            bool answer5 = false;
-            bool expected = false;
-            bool actual;
+        //[TestMethod]
+        //public void Remove_Bool_LastIsFalse()
+        //{
+        //    CustomList<bool> boolList = new CustomList<bool>();
+        //    bool answer1 = true;
+        //    bool answer2 = true;
+        //    bool answer3 = false;
+        //    bool answer4 = true;
+        //    bool answer5 = false;
+        //    bool expected = false;
+        //    bool actual;
 
-            //Act
-            boolList.Add(answer1);
-            boolList.Add(answer2);
-            boolList.Add(answer3);
-            boolList.Add(answer4);
-            boolList.Add(answer5);
-            boolList.Remove(answer4);
-            boolList.Remove(answer3);
-            actual = boolList[3];
+        //    //Act
+        //    boolList.Add(answer1);
+        //    boolList.Add(answer2);
+        //    boolList.Add(answer3);
+        //    boolList.Add(answer4);
+        //    boolList.Add(answer5);
+        //    boolList.Remove(answer4);
+        //    boolList.Remove(answer3);
+        //    actual = boolList[3];
 
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual);
+        //}
     }
 }
