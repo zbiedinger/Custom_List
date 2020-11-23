@@ -82,7 +82,32 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
-        
+
+        [TestMethod]
+        public void Add_string_HowdyIsSecond()
+        {
+            //Arrange
+            CustomList<string> stringList = new CustomList();
+            string blurb = "Sub Bro";
+            string blurb2 = "Howdy";
+            string blurb3 = "Hi Cutie";
+            string blurb4 = "Hi";
+            string blurb5 = "Yo";
+            string expected ="Howdy";
+            string actual;
+
+            //Act
+            stringList.Add(blurb);
+            stringList.Add(blurb2);
+            stringList.Add(blurb3);
+            stringList.Add(blurb4);
+            stringList.Add(blurb5);
+            actual = stringList[1];
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
         [TestMethod]
         public void Add_Bool_CapacityOfEight()
         {

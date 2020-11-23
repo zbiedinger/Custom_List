@@ -71,15 +71,15 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void Remove_string_CapacityOfFour()
+        public void Remove_string_TryToRemoveStringThatsNotThere()
         {
             //Arrange
             CustomList<string> stringList = new CustomList();
             string blurb = "Sub Bro";
             string blurb2 = "Howdy";
             string blurb3 = "Hi Cutie";
-            string blurb4 = "Hi Cutie";
-            string blurb5 = "Hi Cutie";
+            string blurb4 = "Hi";
+            string blurb5 = "Yo";
             int expected = 4;
             int actual;
 
@@ -88,10 +88,8 @@ namespace CustomListTest
             stringList.Add(blurb2);
             stringList.Add(blurb3);
             stringList.Add(blurb4);
-            stringList.Add(blurb5);
-            stringList.Remove(blurb);
-            stringList.Remove(blurb3);
-            actual = stringList.capacity;
+            stringList.Remove(blurb5);
+            actual = stringList.count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -122,5 +120,7 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
     }
 }
