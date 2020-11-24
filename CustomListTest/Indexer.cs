@@ -108,7 +108,7 @@ namespace CustomListTest
             bool answer3 = false;
             bool answer4 = true;
             bool answer5 = false;
-            bool expected = false;
+            bool expected = true;
             bool actual;
 
             //Act
