@@ -18,7 +18,7 @@ namespace CustomListTest
 
             //Act
             intList.Add(num1);
-            actual = intList.count;
+            actual = intList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -39,7 +39,7 @@ namespace CustomListTest
             intList.Add(num1);
             intList.Add(num2);
             intList.Add(num3);
-            actual = intList.count;
+            actual = intList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -73,7 +73,7 @@ namespace CustomListTest
             intList.Add(num7);
             intList.Add(num8);
             intList.Add(num9);
-            actual = intList.count;
+            actual = intList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -90,7 +90,7 @@ namespace CustomListTest
 
             //Act
             stringList.Add(blurb);
-            actual = stringList.count;
+            actual = stringList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -111,7 +111,7 @@ namespace CustomListTest
             stringList.Add(blurb);
             stringList.Add(blurb2);
             stringList.Add(blurb3);
-            actual = stringList.capacity;
+            actual = stringList.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -160,7 +160,7 @@ namespace CustomListTest
             boolList.Add(answer3);
             boolList.Add(answer4);
             boolList.Add(answer5);
-            actual = boolList.capacity;
+            actual = boolList.Capacity;
 
             //Assert
             Assert.AreEqual(expected, actual);

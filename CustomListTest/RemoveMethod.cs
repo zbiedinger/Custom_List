@@ -21,7 +21,7 @@ namespace CustomListTest
             intList.Add(num1);
             intList.Add(num2);
             intList.Remove(num1);
-            actual = intList.count;
+            actual = intList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -46,7 +46,7 @@ namespace CustomListTest
             intList.Add(num4);
             intList.Remove(num2);
             intList.Remove(num4);
-            actual = intList.count;
+            actual = intList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -64,7 +64,7 @@ namespace CustomListTest
             //Act
             stringList.Add(blurb);
             stringList.Remove(blurb);
-            actual = stringList.count;
+            actual = stringList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -89,7 +89,7 @@ namespace CustomListTest
             stringList.Add(blurb3);
             stringList.Add(blurb4);
             stringList.Remove(blurb5);
-            actual = stringList.count;
+            actual = stringList.Count;
 
             //Assert
             Assert.AreEqual(expected, actual);

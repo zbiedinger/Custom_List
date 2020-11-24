@@ -9,9 +9,19 @@ namespace CustomListZ
     public class CustomList<T>
     {
         //Member Variables
+        int count;
+        int capacity;
         T[] _items;
-        public int count;
-        public int capacity;
+
+        //Prperties
+        public int Count
+        {
+            get => count;
+        }
+        public int Capacity
+        {
+            get => capacity;
+        }
 
         //Constructor
         public CustomList()
@@ -19,14 +29,13 @@ namespace CustomListZ
             count = 0;
             capacity = 4;
             _items = new T[capacity];
-
         }
-
+       
         public T this[int index]
         {
             get
             {
-                if (index < 0 || index >= count)
+                if (index < 0 || index >= Count)
                 {
                     throw new IndexOutOfRangeException("Index out of range");
                 }
@@ -34,7 +43,7 @@ namespace CustomListZ
             }
             set
             {
-                if (index < 0 || index >= count)
+                if (index < 0 || index >= Count)
                 {
                     throw new IndexOutOfRangeException("Index out of range");
                 }
@@ -43,7 +52,7 @@ namespace CustomListZ
         }
 
         //Member Methods
-        //Add method using arrays
+        //Add a passed in value to the custom list
         public bool Add(T valueToAdd)
         {
             bool couldAdd = false;
@@ -79,6 +88,7 @@ namespace CustomListZ
             return couldAdd;
         }
 
+        //remove a passed in value to the custom list
         public bool Remove(T valueToRemove)
         {
             for (int i = 0; i < count; i++)
@@ -111,6 +121,14 @@ namespace CustomListZ
             return false;
         }
 
+        //override the ToString method
+        public override string ToString()
+        {
+            string nowstring;
+
+
+            return "Hi";
+        }
     }
 }
 
