@@ -26,7 +26,7 @@ namespace CustomListZ
         {
             get
             {
-                if (index < 0 && index >= count)
+                if (index < 0 || index >= count)
                 {
                     throw new IndexOutOfRangeException("Index out of range");
                 }
@@ -92,7 +92,7 @@ namespace CustomListZ
 
                     T[] temp = new T[capacity];
 
-                    for (int j = 0; j < count-1; j++)
+                    for (int j = 0; j < count - 1; j++)
                     {
                         temp[j] = _items[j];
                     }

@@ -124,5 +124,24 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+
+        //check outside the count of the list
+        [TestMethod]
+        public void Indexer_positiveInt_OutOfBoundsCheck()
+        {
+            CustomList<int> intList = new CustomList<int>();
+            int num1 = 5;
+
+            int expected = 0;
+            int actual;
+
+            //Act
+            intList.Add(num1);
+            //actual = intList[1];
+
+            //Assert
+            Assert.Fail("Index out of range", intList[1].ToString());
+        }
     }
 }
