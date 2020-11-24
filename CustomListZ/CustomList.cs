@@ -19,14 +19,36 @@ namespace CustomListZ
             count = 0;
             capacity = 4;
             _items = new T[capacity];
+
+        }
+
+        public T this[int index]
+        {
+            get
+            {
+                if (index < 0 && index >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                return _items[index];
+            }
+            set
+            {
+                if (index < 0 || index >= count)
+                {
+                    throw new IndexOutOfRangeException("Index out of range");
+                }
+                _items[index] = value;
+            }
         }
 
         //Member Methods
+        //Add method using arrays
         public bool Add(T valueToAdd)
         {
             bool couldAdd = false;
-            
-            if(count < capacity)
+
+            if (count < capacity)
             {
                 _items[count] = valueToAdd;
                 count++;
@@ -37,7 +59,7 @@ namespace CustomListZ
                 capacity *= 2;
                 T[] temp = new T[capacity];
 
-                for (int i = 0; i < count-1; i++)
+                for (int i = 0; i < count - 1; i++)
                 {
                     temp[i] = _items[i];
                 }
@@ -53,7 +75,7 @@ namespace CustomListZ
                 count++;
                 couldAdd = true;
             }
-            
+
             return couldAdd;
         }
 
@@ -67,3 +89,4 @@ namespace CustomListZ
 
     }
 }
+

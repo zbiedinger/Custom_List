@@ -117,30 +117,30 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void Add_string_HowdyIsSecond()
-        //{
-        //    //Arrange
-        //    CustomList<string> stringList = new CustomList<string>();
-        //    string blurb = "Sub Bro";
-        //    string blurb2 = "Howdy";
-        //    string blurb3 = "Hi Cutie";
-        //    string blurb4 = "Hi";
-        //    string blurb5 = "Yo";
-        //    string expected = "Howdy";
-        //    string actual;
+        [TestMethod]
+        public void Add_string_HowdyIsSecond()
+        {
+            //Arrange
+            CustomList<string> stringList = new CustomList<string>();
+            string blurb = "Sub Bro";
+            string blurb2 = "Howdy";
+            string blurb3 = "Hi Cutie";
+            string blurb4 = "Hi";
+            string blurb5 = "Yo";
+            string expected = "Howdy";
+            string actual;
 
-        //    //Act
-        //    stringList.Add(blurb);
-        //    stringList.Add(blurb2);
-        //    stringList.Add(blurb3);
-        //    stringList.Add(blurb4);
-        //    stringList.Add(blurb5);
-        //    actual = stringList[1];
+            //Act
+            stringList.Add(blurb);
+            stringList.Add(blurb2);
+            stringList.Add(blurb3);
+            stringList.Add(blurb4);
+            stringList.Add(blurb5);
+            actual = stringList[1];
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
 
         [TestMethod]
         public void Add_Bool_CapacityOfEight()
@@ -166,28 +166,28 @@ namespace CustomListTest
             Assert.AreEqual(expected, actual);
         }
 
-        //[TestMethod]
-        //public void Add_Bool_LastAddIsFalse()
-        //{
-        //    CustomList<bool> boolList = new CustomList<bool>();
-        //    bool answer1 = true;
-        //    bool answer2 = true;
-        //    bool answer3 = false;
-        //    bool answer4 = true;
-        //    bool answer5 = false;
-        //    bool expected = false;
-        //    bool actual;
+        [TestMethod]
+        public void Add_Bool_LastAddIsFalse()
+        {
+            CustomList<bool> boolList = new CustomList<bool>();
+            bool answer1 = true;
+            bool answer2 = true;
+            bool answer3 = false;
+            bool answer4 = true;
+            bool answer5 = false;
+            bool expected = false;
+            bool actual;
 
-        //    //Act
-        //    boolList.Add(answer1);
-        //    boolList.Add(answer2);
-        //    boolList.Add(answer3);
-        //    boolList.Add(answer4);
-        //    boolList.Add(answer5);
-        //    actual = boolList[4];
+            //Act
+            boolList.Add(answer1);
+            boolList.Add(answer2);
+            boolList.Add(answer3);
+            boolList.Add(answer4);
+            boolList.Add(answer5);
+            actual = boolList[4];
 
-        //    //Assert
-        //    Assert.AreEqual(expected, actual);
-        //}
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
