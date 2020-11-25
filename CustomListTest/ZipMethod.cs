@@ -7,6 +7,34 @@ namespace CustomListTest
     [TestClass]
     public class ZipMethod
     {
+
+
+        [TestMethod]
+        public void CHECKINGSTUFFZip_positiveInts_ListOf123456()
+        {
+            int num1 = 1;
+            int num2 = 3;
+            int num3 = 5;
+            int num4 = 2;
+            int num5 = 4;
+            int num6 = 6;
+
+            CustomList<int> expected = new CustomList<int>();
+            expected.Add(num1);
+            expected.Add(num4);
+
+            CustomList<int> actual = new CustomList<int>();
+
+            //Act
+            actual.Add(num1);
+            actual.Add(num4);
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+
         [TestMethod]
         public void Zip_positiveInts_ListOf123456()
         {
@@ -19,7 +47,13 @@ namespace CustomListTest
             int num5 = 4;
             int num6 = 6;
 
-            int[] expected = new int[] { 1, 2, 3, 4, 5, 6 };
+            CustomList<int> expected = new CustomList<int>();
+            expected.Add(num1);
+            expected.Add(num4);
+            expected.Add(num2);
+            expected.Add(num5);
+            expected.Add(num3);
+            expected.Add(num6);
             CustomList<int> actual;
 
             //Act
@@ -32,7 +66,7 @@ namespace CustomListTest
 
             actual = intListOne.Zip(intListTwo);
 
-            ////Assert
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -63,7 +97,7 @@ namespace CustomListTest
 
             actual = intListSmall.Zip(intListBig);
 
-            ////Assert
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -121,7 +155,7 @@ namespace CustomListTest
 
             actual = stringListBig.Zip(stringListSmall);
 
-            ////Assert
+            //Assert
             Assert.AreEqual(expected, actual);
         }
 
@@ -143,7 +177,7 @@ namespace CustomListTest
 
             actual = stringListOne.Zip(stringListTwo);
 
-            ////Assert
+            //Assert
             Assert.AreEqual(expected, actual);
         }
     }

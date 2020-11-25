@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CustomListZ
 {
-    public class CustomList<T>
+    public class CustomList<T> where T : IComparable<T>
     {
         //Member Variables
         int count;
@@ -137,18 +137,19 @@ namespace CustomListZ
             return nowstring;
         }
 
-        ////Overload the plus operator
-        //public static CustomList<T> operator +(CustomList<T> _listOne, CustomList<T> _listTwo)
-        //{
-        //    T[] _newList = new T[_listOne.count + _listTwo.count];
+        //Overload the plus operator
+        public static CustomList<T> operator +(CustomList<T> _listOne, CustomList<T> _listTwo)
+        {
+            //T[] _newList = new T[_listOne.count + _listTwo.count];
+            CustomList<T> _newList = new CustomList<T>();
 
-        //    return _newList;
-        //}
+            return _newList;
+        }
 
         ////Overload the minus operator
         //public static CustomList<T> operator -(CustomList<T> _listOne, CustomList<T> _listTwo)
         //{
-        //    T[] _newList = new T[_listOne.count + _listTwo.count];
+        //    T[] _newList = new T[_listOne.count - _listTwo.count];
 
         //    return _newList;
         //}
@@ -156,10 +157,43 @@ namespace CustomListZ
         //Zip method that passes in a list to be zipped with
         public CustomList<T> Zip(CustomList<T> passedList)
         {
-            
-            
             CustomList<T> zippedList = new CustomList<T>();
 
+
+            if (Count == passedList.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    zippedList.Add(_items[i]);
+                    zippedList.Add(passedList[i]);
+                }
+            }
+            else if(Count < passedList.Count)
+            {
+                for (int i = 0; i < Count; i++)
+                {
+                    zippedList.Add(_items[i]);
+                    zippedList.Add(passedList[i]);
+                }
+                for (int i = Count; i < (passedList.Count - Count); i++)
+                {
+                    zippedList.Add(passedList[i]);
+                }
+            }
+            else if(Count > passedList.Count)
+            {
+                for (int i = 0; i < passedList.Count; i++)
+                {
+                    zippedList.Add(_items[i]);
+                    zippedList.Add(passedList[i]);
+                }
+                for (int i = passedList.Count; i < (Count - passedList.Count); i++)
+                {
+                    zippedList.Add(_items[i]);
+                }
+            }
+            
+            
             return zippedList;
         }
     }

@@ -189,5 +189,23 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Add_SameVariableTwice_CountOftwo()
+        {
+            //Arrange
+            CustomList<int> intList = new CustomList<int>();
+            int num1 = 9;
+            int expected = 2;
+            int actual;
+
+            //Act
+            intList.Add(num1);
+            intList.Add(num1);
+            actual = intList.Count;
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
