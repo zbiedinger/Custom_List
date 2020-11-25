@@ -131,11 +131,9 @@ namespace CustomListZ
             for (int i = 0; i < count; i++)
             {
                 builder.Append(_items[i]);
-
             }
             
             string nowstring = builder.ToString();
-
             return nowstring;
         }
 

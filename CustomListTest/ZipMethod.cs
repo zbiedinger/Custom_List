@@ -39,8 +39,8 @@ namespace CustomListTest
         [TestMethod]
         public void Zip_IntListOfDifferntSize_ListOf1234567()
         {
-            CustomList<int> intListOne = new CustomList<int>();
-            CustomList<int> intListTwo = new CustomList<int>();
+            CustomList<int> intListSmall = new CustomList<int>();
+            CustomList<int> intListBig = new CustomList<int>();
             int num1 = 1;
             int num2 = 3;
             int num3 = 5;
@@ -53,25 +53,55 @@ namespace CustomListTest
             CustomList<int> actual;
 
             //Act
-            intListOne.Add(num1);
-            intListOne.Add(num2);
-            intListOne.Add(num3);
-            intListTwo.Add(num4);
-            intListTwo.Add(num5);
-            intListTwo.Add(num6);
-            intListTwo.Add(num7);
+            intListSmall.Add(num1);
+            intListSmall.Add(num2);
+            intListSmall.Add(num3);
+            intListBig.Add(num4);
+            intListBig.Add(num5);
+            intListBig.Add(num6);
+            intListBig.Add(num7);
 
-            actual = intListOne.Zip(intListTwo);
+            actual = intListSmall.Zip(intListBig);
 
             ////Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
+        public void Zip_bool_ListOfTFTFTF()
+        {
+            CustomList<bool> boolListOne = new CustomList<bool>();
+            CustomList<bool> boolListTwo = new CustomList<bool>();
+            bool truth1 = true;
+            bool truth2 = true;
+            bool truth3 = true;
+            bool truth4 = false;
+            bool truth5 = false;
+            bool truth6 = false;
+
+            bool[] expected = new bool[] { true, false, true, false, true, false };
+            CustomList<bool> actual;
+
+            //Act
+            boolListOne.Add(truth1);
+            boolListOne.Add(truth2);
+            boolListOne.Add(truth3);
+            boolListTwo.Add(truth4);
+            boolListTwo.Add(truth5);
+            boolListTwo.Add(truth6);
+
+            actual = boolListOne.Zip(boolListTwo);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+            
+        }
+
+        [TestMethod]
         public void Zip_stringListOfDifferntSize_ListOfABCDE()
         {
-            CustomList<string> stringListOne = new CustomList<string>();
-            CustomList<string> stringListTwo = new CustomList<string>();
+            CustomList<string> stringListBig = new CustomList<string>();
+            CustomList<string> stringListSmall = new CustomList<string>();
             string letter = "A";
             string letter2 = "B";
             string letter3 = "C";
@@ -82,39 +112,33 @@ namespace CustomListTest
             CustomList<string> actual;
 
             //Act
-            stringListOne.Add(letter);
-            stringListOne.Add(letter3);
-            stringListOne.Add(letter5);
-            stringListTwo.Add(letter2);
-            stringListTwo.Add(letter4);
+            stringListBig.Add(letter);
+            stringListBig.Add(letter3);
+            stringListBig.Add(letter5);
+            stringListSmall.Add(letter2);
+            stringListSmall.Add(letter4);
 
 
-            actual = stringListOne.Zip(stringListTwo);
+            actual = stringListBig.Zip(stringListSmall);
 
             ////Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Zip_DifferentListTypes_NoListMade()
+        public void Zip_EmptyString_NoListMade()
         {
             CustomList<string> stringListOne = new CustomList<string>();
-            CustomList<int> stringListTwo = new CustomList<int>();
+            CustomList<string> stringListTwo = new CustomList<string>();
             string letter = "A";
-            int num1 = 8;
-            string letter3 = "C";
-            int num2 = 4;
-            string letter5 = "E";
+            string letter2 = "C";
 
-            string[] expected = new string[] {null};
+            string[] expected = new string[] { "A", "C" };
             CustomList<string> actual;
 
             //Act
             stringListOne.Add(letter);
-            stringListOne.Add(letter3);
-            stringListOne.Add(letter5);
-            stringListTwo.Add(num1);
-            stringListTwo.Add(num2);
+            stringListOne.Add(letter2);
 
 
             actual = stringListOne.Zip(stringListTwo);
