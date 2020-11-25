@@ -56,19 +56,22 @@ namespace CustomListTest
         [TestMethod]
         public void ToString_bools_StringOftrue()
         {
-            CustomList<bool> intList = new CustomList<bool>();
+            CustomList<bool> boolList = new CustomList<bool>();
             bool num1 = true;
             bool num2 = true;
             bool num3 = true;
+            bool num4 = false;
 
-            string expected = "truetruetrue";
+            string expected = "TrueTrueTrueFalse";
             string actual;
 
             //Act
-            intList.Add(num1);
-            intList.Add(num2);
-            intList.Add(num3);
-            actual = intList.ToString();
+            boolList.Add(num1);
+            boolList.Add(num2);
+            boolList.Add(num3);
+            boolList.Add(num4);
+
+            actual = boolList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);

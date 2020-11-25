@@ -11,8 +11,8 @@ namespace CustomListZ
         //Member Variables
         int count;
         int capacity;
-        T[] _items;
-
+        public T[] _items;
+        
         //Prperties
         public int Count
         {
@@ -22,15 +22,7 @@ namespace CustomListZ
         {
             get => capacity;
         }
-
-        //Constructor
-        public CustomList()
-        {
-            count = 0;
-            capacity = 4;
-            _items = new T[capacity];
-        }
-       
+        
         public T this[int index]
         {
             get
@@ -50,6 +42,16 @@ namespace CustomListZ
                 _items[index] = value;
             }
         }
+
+
+        //Constructor
+        public CustomList()
+        {
+            count = 0;
+            capacity = 4;
+            _items = new T[capacity];
+        }
+      
 
         //Member Methods
         //Add a passed in value to the custom list
@@ -124,10 +126,43 @@ namespace CustomListZ
         //override the ToString method
         public override string ToString()
         {
-            string nowstring;
+            StringBuilder builder = new StringBuilder();
 
+            for (int i = 0; i < count; i++)
+            {
+                builder.Append(_items[i]);
 
-            return "Hi";
+            }
+            
+            string nowstring = builder.ToString();
+
+            return nowstring;
+        }
+
+        ////Overload the plus operator
+        //public static CustomList<T> operator +(CustomList<T> _listOne, CustomList<T> _listTwo)
+        //{
+        //    T[] _newList = new T[_listOne.count + _listTwo.count];
+
+        //    return _newList;
+        //}
+
+        ////Overload the minus operator
+        //public static CustomList<T> operator -(CustomList<T> _listOne, CustomList<T> _listTwo)
+        //{
+        //    T[] _newList = new T[_listOne.count + _listTwo.count];
+
+        //    return _newList;
+        //}
+
+        //Zip method that passes in a list to be zipped with
+        public CustomList<T> Zip(CustomList<T> passedList)
+        {
+            
+            
+            CustomList<T> zippedList = new CustomList<T>();
+
+            return zippedList;
         }
     }
 }
