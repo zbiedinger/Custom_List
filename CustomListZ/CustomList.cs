@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace CustomListZ
 {
-    public class CustomList<T> where T : IComparable<T>
+    public class CustomList<T>
     {
         //Member Variables
         int count;
         int capacity;
         public T[] _items;
         
-        //Prperties
-        public int Count
-        {
-            get => count;
-        }
+
+        //Properties
+        //count is read only
+        public int Count { get => count; }
+        //capacity is read only
         public int Capacity
         {
             get => capacity;
         }
-        
+        //indexer
         public T this[int index]
         {
             get
@@ -42,7 +42,6 @@ namespace CustomListZ
                 _items[index] = value;
             }
         }
-
 
         //Constructor
         public CustomList()
@@ -159,7 +158,6 @@ namespace CustomListZ
         {
             CustomList<T> zippedList = new CustomList<T>();
 
-
             if (Count == passedList.Count)
             {
                 for (int i = 0; i < Count; i++)
@@ -175,7 +173,7 @@ namespace CustomListZ
                     zippedList.Add(_items[i]);
                     zippedList.Add(passedList[i]);
                 }
-                for (int i = Count; i < (passedList.Count - Count); i++)
+                for (int i = Count; i < (passedList.Count); i++)
                 {
                     zippedList.Add(passedList[i]);
                 }
@@ -187,15 +185,45 @@ namespace CustomListZ
                     zippedList.Add(_items[i]);
                     zippedList.Add(passedList[i]);
                 }
-                for (int i = passedList.Count; i < (Count - passedList.Count); i++)
+                for (int i = passedList.Count; i < (Count); i++)
                 {
                     zippedList.Add(_items[i]);
                 }
             }
-            
-            
             return zippedList;
         }
+        
+        
+        //public int CompareTo(CustomList<T> actual)
+        //{
+        //    int result = -1;
+
+        //    if(Count == actual.Count)
+        //    {
+        //        for (int i = 0; i < Count; i++)
+        //        {
+        //            //if(_items[i] == actual[i])
+        //            //{
+
+        //            //}
+        //            //else
+        //            //{
+        //            //    result = -1;
+        //            //}
+        //        }
+        //        result = 0;
+        //    }
+        //    else if (Count < actual.Count)
+        //    {
+        //        result = 1;
+        //    }
+        //    else if (Count < actual.Count)
+        //    {
+        //        result = -1;
+        //    }
+
+        //    return result;
+        //}
     }
 }
 

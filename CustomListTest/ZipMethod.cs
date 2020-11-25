@@ -10,25 +10,19 @@ namespace CustomListTest
 
 
         [TestMethod]
-        public void CHECKINGSTUFFZip_positiveInts_ListOf123456()
+        public void Zip_negativeInts_ListOf12()
         {
-            int num1 = 1;
-            int num2 = 3;
-            int num3 = 5;
-            int num4 = 2;
-            int num5 = 4;
-            int num6 = 6;
-
-            CustomList<int> expected = new CustomList<int>();
-            expected.Add(num1);
-            expected.Add(num4);
-
-            CustomList<int> actual = new CustomList<int>();
+            //Arrange
+            int num1 = -1;
+            int num4 = -2;
+            string expected = "-1-2";
+            CustomList<int> actualList = new CustomList<int>();
 
             //Act
-            actual.Add(num1);
-            actual.Add(num4);
+            actualList.Add(num1);
+            actualList.Add(num4);
 
+            string actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -47,14 +41,9 @@ namespace CustomListTest
             int num5 = 4;
             int num6 = 6;
 
-            CustomList<int> expected = new CustomList<int>();
-            expected.Add(num1);
-            expected.Add(num4);
-            expected.Add(num2);
-            expected.Add(num5);
-            expected.Add(num3);
-            expected.Add(num6);
-            CustomList<int> actual;
+            string expected = "123456";
+            CustomList<int> actualList;
+            string actual;
 
             //Act
             intListOne.Add(num1);
@@ -64,7 +53,8 @@ namespace CustomListTest
             intListTwo.Add(num5);
             intListTwo.Add(num6);
 
-            actual = intListOne.Zip(intListTwo);
+            actualList = intListOne.Zip(intListTwo);
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -83,8 +73,9 @@ namespace CustomListTest
             int num6 = 6;
             int num7 = 7;
 
-            int[] expected = new int[] { 1, 2, 3, 4, 5, 6, 7 };
-            CustomList<int> actual;
+            string expected = "1234567";
+            CustomList<int> actualList;
+            string actual;
 
             //Act
             intListSmall.Add(num1);
@@ -95,7 +86,8 @@ namespace CustomListTest
             intListBig.Add(num6);
             intListBig.Add(num7);
 
-            actual = intListSmall.Zip(intListBig);
+            actualList = intListSmall.Zip(intListBig);
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -113,8 +105,9 @@ namespace CustomListTest
             bool truth5 = false;
             bool truth6 = false;
 
-            bool[] expected = new bool[] { true, false, true, false, true, false };
-            CustomList<bool> actual;
+            string expected = "TrueFalseTrueFalseTrueFalse";
+            CustomList<bool> actualList;
+            string actual;
 
             //Act
             boolListOne.Add(truth1);
@@ -124,11 +117,11 @@ namespace CustomListTest
             boolListTwo.Add(truth5);
             boolListTwo.Add(truth6);
 
-            actual = boolListOne.Zip(boolListTwo);
+            actualList = boolListOne.Zip(boolListTwo);
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
-            
         }
 
         [TestMethod]
@@ -142,8 +135,9 @@ namespace CustomListTest
             string letter4 = "D";
             string letter5 = "E";
 
-            string[] expected = new string[] { "A", "B", "C", "D", "E" };
-            CustomList<string> actual;
+            string expected = "ABCDE";
+            CustomList<string> actualList;
+            string actual;
 
             //Act
             stringListBig.Add(letter);
@@ -153,29 +147,54 @@ namespace CustomListTest
             stringListSmall.Add(letter4);
 
 
-            actual = stringListBig.Zip(stringListSmall);
+            actualList = stringListBig.Zip(stringListSmall);
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
-        public void Zip_EmptyString_NoListMade()
+        public void Zip_EmptyStringSecond_NoListMade()
         {
-            CustomList<string> stringListOne = new CustomList<string>();
-            CustomList<string> stringListTwo = new CustomList<string>();
+            CustomList<string> stringListBig = new CustomList<string>();
+            CustomList<string> stringListSmall = new CustomList<string>();
             string letter = "A";
             string letter2 = "C";
 
-            string[] expected = new string[] { "A", "C" };
-            CustomList<string> actual;
+            string expected = "AC";
+            CustomList<string> actualList;
+            string actual;
 
             //Act
-            stringListOne.Add(letter);
-            stringListOne.Add(letter2);
+            stringListBig.Add(letter);
+            stringListBig.Add(letter2);
 
+            actualList = stringListBig.Zip(stringListSmall);
+            actual = actualList.ToString();
 
-            actual = stringListOne.Zip(stringListTwo);
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Zip_EmptyStringFirst_NoListMade()
+        {
+            CustomList<string> stringListBig = new CustomList<string>();
+            CustomList<string> stringListSmall = new CustomList<string>();
+            string letter = "A";
+            string letter2 = "C";
+
+            string expected = "AC";
+            CustomList<string> actualList;
+            string actual;
+
+            //Act
+            stringListBig.Add(letter);
+            stringListBig.Add(letter2);
+
+            actualList = stringListSmall.Zip(stringListBig);
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);

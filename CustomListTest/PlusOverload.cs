@@ -74,8 +74,9 @@ namespace CustomListTest
             char letter4 = 'e';
             char letter5 = 't';
 
-            char[] expected = new char[] { 't', 'i', 'g', 'g', 'e', 'r' };
-            CustomList<char> actual;
+            string expected = "tigger";
+            CustomList<char> actualList;
+            string actual = "";
 
             //Act
             intListSmall.Add(letter1);
@@ -85,7 +86,8 @@ namespace CustomListTest
             intListBig.Add(letter4);
             intListBig.Add(letter5);
  
-            actual = intListSmall + intListBig;
+            actualList = intListSmall + intListBig;
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -98,16 +100,16 @@ namespace CustomListTest
             CustomList<string> stringListRest = new CustomList<string>();
             CustomList<string> stringListMerrily = new CustomList<string>();
 
-            string word1 = "Row";
-            string word2 = "your boat";
-            string word3 = "Gently";
-            string word4 = "down";
-            string word5 = "the stream";
-            string word6 = "Merrily";
+            string word1 = "Row ";
+            string word2 = "your boat. ";
+            string word3 = "Gently ";
+            string word4 = "down ";
+            string word5 = "the stream. ";
+            string word6 = "Merrily ";
 
-            string[] expected = new string[] { "Row", "Row", "Row", "your boat", "Gently", "down",
-                "the stream", "Merrily", "Merrily", "Merrily", "Merrily" };
-            CustomList<string> actual;
+            string expected = "Row Row Row your boat. Gently down the stream. Merrily Merrily Merrily Merrily ";
+            CustomList<string> actualList;
+            string actual;
 
             //Act
             stringListRow.Add(word1);
@@ -124,7 +126,35 @@ namespace CustomListTest
             stringListMerrily.Add(word6);
             stringListMerrily.Add(word6);
 
-            actual = stringListRow + stringListRest + stringListMerrily;
+            actualList = stringListRow + stringListRest + stringListMerrily;
+            actual = actualList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void PlusOperator_BoolLists_ListOfRowYourBoat()
+        {
+            //Arrange
+            CustomList<bool> boolListTrue = new CustomList<bool>();
+            CustomList<bool> boolListFalse = new CustomList<bool>();
+            bool truthT = true;
+            bool truthF = false;
+
+
+            string expected = "TrueTrueFalseFalse";
+            CustomList<bool> actualList;
+            string actual;
+
+            //Act
+            boolListTrue.Add(truthT);
+            boolListTrue.Add(truthT);
+            boolListFalse.Add(truthF);
+            boolListFalse.Add(truthF);
+
+            actualList = boolListTrue + boolListFalse;
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
