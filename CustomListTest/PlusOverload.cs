@@ -20,8 +20,9 @@ namespace CustomListTest
             int num5 = 4;
             int num6 = 6;
 
-            int[] expected = new int[] { 1, 3, 5, 2, 4, 6 };
-            CustomList<int> actual;
+            string expected = "135246";
+            CustomList<int> actualList;
+            string actual = "";
 
             //Act
             intListOne.Add(num1);
@@ -31,7 +32,8 @@ namespace CustomListTest
             intListTwo.Add(num5);
             intListTwo.Add(num6);
 
-            actual = intListOne + intListTwo;
+            actualList = intListOne + intListTwo;
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -47,8 +49,9 @@ namespace CustomListTest
             int num3 = 5;
             int num4 = 2;
 
-            int[] expected = new int[] { 1, 3, 5, 2, 4, 6 };
-            CustomList<int> actual;
+            string expected = "1352";
+            CustomList<int> actualList;
+            string actual = "";
 
             //Act
             intListBig.Add(num1);
@@ -57,7 +60,8 @@ namespace CustomListTest
             intListSmall.Add(num4);
             
 
-            actual = intListBig + intListSmall;
+            actualList = intListBig + intListSmall;
+            actual = actualList.ToString();
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -72,7 +76,7 @@ namespace CustomListTest
             char letter2 = 'i';
             char letter3 = 'g';
             char letter4 = 'e';
-            char letter5 = 't';
+            char letter5 = 'r';
 
             string expected = "tigger";
             CustomList<char> actualList;

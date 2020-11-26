@@ -51,11 +51,11 @@
   <ItemGroup>
     <Compile Include="AddMethod.cs" />
     <Compile Include="Indexer.cs" />
+    <Compile Include="Iterable.cs" />
     <Compile Include="MinusOverload.cs" />
     <Compile Include="PlusOverload.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveMethod.cs" />
-    <Compile Include="Sort.cs" />
     <Compile Include="ToString.cs" />
     <Compile Include="ZipMethod.cs" />
   </ItemGroup>

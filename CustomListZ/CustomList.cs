@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListZ
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable, IComparable
     {
         //Member Variables
         int count;
@@ -139,19 +140,27 @@ namespace CustomListZ
         //Overload the plus operator
         public static CustomList<T> operator +(CustomList<T> _listOne, CustomList<T> _listTwo)
         {
-            //T[] _newList = new T[_listOne.count + _listTwo.count];
             CustomList<T> _newList = new CustomList<T>();
+
+            for (int i = 0; i < _listOne.count; i++)
+            {
+                _newList.Add(_listOne[i]);
+            }
+            for (int i = 0; i < _listTwo.count; i++)
+            {
+                _newList.Add(_listTwo[i]);
+            }
 
             return _newList;
         }
 
-        ////Overload the minus operator
-        //public static CustomList<T> operator -(CustomList<T> _listOne, CustomList<T> _listTwo)
-        //{
-        //    T[] _newList = new T[_listOne.count - _listTwo.count];
+        //Overload the minus operator
+        public static CustomList<T> operator -(CustomList<T> _listOne, CustomList<T> _listTwo)
+        {
+            CustomList<T> _newList = new CustomList<T>();
 
-        //    return _newList;
-        //}
+            return _newList;
+        }
 
         //Zip method that passes in a list to be zipped with
         public CustomList<T> Zip(CustomList<T> passedList)
@@ -192,8 +201,8 @@ namespace CustomListZ
             }
             return zippedList;
         }
-        
-        
+
+
         //public int CompareTo(CustomList<T> actual)
         //{
         //    int result = -1;
@@ -224,6 +233,16 @@ namespace CustomListZ
 
         //    return result;
         //}
+
+        public IEnumerator GetEnumerator()
+        {
+            yield return null;
+        }
+
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 
