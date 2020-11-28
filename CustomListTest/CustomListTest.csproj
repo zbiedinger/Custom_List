@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="AddMethod.cs" />
     <Compile Include="Indexer.cs" />
+    <Compile Include="InitializerTest.cs" />
     <Compile Include="Iterable.cs" />
     <Compile Include="MinusOverload.cs" />
     <Compile Include="PlusOverload.cs" />

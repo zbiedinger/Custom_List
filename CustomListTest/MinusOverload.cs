@@ -12,27 +12,14 @@ namespace CustomListTest
         public void MinusOperator_PositiveIntsRemoving1num_ListOf35()
         {
             //Arrange
-            CustomList<int> intListTwo = new CustomList<int>();
-            CustomList<int> intListOne = new CustomList<int>();
-
-            int num1 = 1;
-            int num2 = 2;
-            int num3 = 3;
-            int num5 = 5;
-            int num6 = 6;
+            CustomList<int> intListOne = new CustomList<int>() { 1, 3, 5 };
+            CustomList<int> intListTwo = new CustomList<int>() { 2, 1, 6 };
 
             string expected = "35";
             CustomList<int> actualList;
             string actual = "";
 
             //Act
-            intListOne.Add(num1);
-            intListOne.Add(num3);
-            intListOne.Add(num5);
-            intListTwo.Add(num2);
-            intListTwo.Add(num1);
-            intListTwo.Add(num6);
-
             actualList = intListOne - intListTwo;
             actual = actualList.ToString();
 
@@ -41,34 +28,17 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void MinusOperator_PositiveIntsRemoving2num_ListOf358()
+        public void MinusOperator_PositiveIntsRemoving2num_ListOf35()
         {
             //Arrange
-            CustomList<int> intListTwo = new CustomList<int>();
-            CustomList<int> intListOne = new CustomList<int>();
-
-            int num1 = 1;
-            int num2 = 2;
-            int num3 = 3;
-            int num5 = 5;
-            int num6 = 6;
-            int num8 = 8;
+            CustomList<int> intListTwo = new CustomList<int>() { 2,1,6,8};
+            CustomList<int> intListOne = new CustomList<int>() { 1,3,5,8};
 
             string expected = "35";
             CustomList<int> actualList;
             string actual = "";
 
             //Act
-            intListOne.Add(num1);
-            intListOne.Add(num3);
-            intListOne.Add(num5);
-            intListOne.Add(num8);
-            intListTwo.Add(num2);
-            intListTwo.Add(num1);
-            intListTwo.Add(num6);
-            intListTwo.Add(num8);
-
-
             actualList = intListOne - intListTwo;
             actual = actualList.ToString();
 
@@ -77,33 +47,56 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void MinusOperator_IntsRemovingonlythefirst1_ListOf358()
+        public void MinusOperator_IntsRemovingOnlythefirst1_ListOf358()
         {
             //Arrange
-            CustomList<int> intListTwo = new CustomList<int>();
-            CustomList<int> intListOne = new CustomList<int>();
-
-            int num1 = 1;
-            int num2 = 2;
-            int num3 = 3;
-            int num5 = 5;
-            int num6 = 6;
+            CustomList<int> intListOne = new CustomList<int>() { 1,3,5,1};
+            CustomList<int> intListTwo = new CustomList<int>() { 2,1,6};
 
             string expected = "35";
             CustomList<int> actualList;
             string actual = "";
 
             //Act
-            intListOne.Add(num1);
-            intListOne.Add(num3);
-            intListOne.Add(num5);
-            intListOne.Add(num1);
-            intListTwo.Add(num2);
-            intListTwo.Add(num1);
-            intListTwo.Add(num6);
-
-
             actualList = intListOne - intListTwo;
+            actual = actualList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MinusOperator_String_ListOfacd()
+        {
+            //Arrange
+            CustomList<string> stringListOne = new CustomList<string>() { "a", "b", "c", "d"};
+            CustomList<string> stringListTwo = new CustomList<string>() { "e", "e", "b"};
+
+            string expected = "acd";
+            CustomList<string> actualList;
+            string actual;
+
+            //Act
+            actualList = stringListOne - stringListTwo;
+            actual = actualList.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void MinusOperator_bool_ListOfTrue()
+        {
+            //Arrange
+            CustomList<bool> stringListOne = new CustomList<bool>() { true, false, true };
+            CustomList<bool> stringListTwo = new CustomList<bool>() { false, true };
+
+            string expected = "True";
+            CustomList<bool> actualList;
+            string actual;
+
+            //Act
+            actualList = stringListOne - stringListTwo;
             actual = actualList.ToString();
 
             //Assert
