@@ -163,5 +163,22 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void PlusOperator_negativeDoubleWithPlusEquals_ListOfnumbers()
+        {
+            CustomList<double> intListOne = new CustomList<double>() { 5.3, -4.2, 1.0 };
+            CustomList<double> intListTwo = new CustomList<double>() { 0.45, 0.11, 100, -0.001, 9.0 };
+
+            string expected = "5.3-4.210.450.11100-0.0019";
+            string actual = "";
+
+            //Act
+            intListOne += intListTwo;
+            actual = intListOne.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

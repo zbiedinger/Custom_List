@@ -102,5 +102,23 @@ namespace CustomListTest
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void MinusOperator_DoublesWithMinusEquals_ListOf11135()
+        {
+            //Arrange
+            CustomList<double> intListOne = new CustomList<double>() { 1.1, 3, 5, 1.0 };
+            CustomList<double> intListTwo = new CustomList<double>() { 2.4, 1, 6, 1.9 };
+
+            string expected = "1.135";
+            string actual = "";
+
+            //Act
+            intListOne -= intListTwo;
+            actual = intListOne.ToString();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
