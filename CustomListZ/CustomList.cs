@@ -18,11 +18,13 @@ namespace CustomListZ
         //Properties
         //count is read only
         public int Count { get => count; }
+        
         //capacity is read only
         public int Capacity
         {
             get => capacity;
         }
+        
         //indexer
         public T this[int index]
         {
@@ -43,6 +45,7 @@ namespace CustomListZ
                 _items[index] = value;
             }
         }
+
 
         //Constructor
         public CustomList()
@@ -155,10 +158,21 @@ namespace CustomListZ
         }
 
         //Overload the minus operator
-        public static CustomList<T> operator -(CustomList<T> _listOne, CustomList<T> _listTwo)
+        public static CustomList<T> operator -(CustomList<T> _originalList, CustomList<T> _listToSubtract)
         {
-            CustomList<T> _newList = new CustomList<T>();
+            CustomList<T> _newList = _originalList;
 
+            for (int i = 0; i < _listToSubtract.Count; i++)
+            {
+                for (int j = 0; j < _originalList.Count; j++)
+                {
+                    if (_listToSubtract[i].ToString() == _originalList[j].ToString())
+                    {
+                        _newList.Remove(_originalList[j]);
+                        break;
+                    }
+                }
+            }
             return _newList;
         }
 
@@ -202,6 +216,20 @@ namespace CustomListZ
             return zippedList;
         }
 
+        //contract for IEnumerable
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < Count; i++)
+            {
+                yield return _items[i];
+            }
+        }
+
+        //Contract for Icomparable
+        public int CompareTo(object obj)
+        {
+            throw new NotImplementedException();
+        }
 
         //public int CompareTo(CustomList<T> actual)
         //{
@@ -233,16 +261,6 @@ namespace CustomListZ
 
         //    return result;
         //}
-
-        public IEnumerator GetEnumerator()
-        {
-            yield return null;
-        }
-
-        public int CompareTo(object obj)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 

@@ -47,13 +47,13 @@ namespace CustomListTest
         }
 
         [TestMethod]
-        public void MinusOperator_IntsRemovingOnlythefirst1_ListOf358()
+        public void MinusOperator_IntsRemovingOnlythefirst1_ListOf351()
         {
             //Arrange
             CustomList<int> intListOne = new CustomList<int>() { 1,3,5,1};
             CustomList<int> intListTwo = new CustomList<int>() { 2,1,6};
 
-            string expected = "35";
+            string expected = "351";
             CustomList<int> actualList;
             string actual = "";
 
