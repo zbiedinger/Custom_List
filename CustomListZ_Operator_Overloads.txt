@@ -1,3 +1,76 @@
 + operator overload (C# CustomeListZ reference)
 
 Namespace: CustomeListZ
+
+syntax
+------
+combinedList = firstList + secondList;
+
+Parameters
+----------
+This binary operator has two input parameters of CustomList<t>.
+
+Returns
+-------
+CustomList<T>
+
+This + operator returns a new instance of CustomList<T>. The returned 
+instance is the contents of the first CustomList<T> parameter followed 
+by the contents of the second parameter. 
+
+Example
+-------
+The following example shows how to use the + operator on a list of ints:
+
+Custom<int> one = new Custom<int>() {1,3,5};
+Custom<int> two = new Custom<int>() {2,4,6};
+
+Custom<int> result = one + two;
+
+foreach(int num in result)
+{
+	Console.Wright(num + ", ");
+}
+
+//prints to the screen
+//1, 3, 5, 2, 4, 6,
+
+
+--------------------------------------------------------------------------
+
+- operator overload (C# CustomeListZ reference)
+
+Namespace: CustomeListZ
+
+syntax
+------
+combinedList = firstList - secondList;
+
+Parameters
+----------
+This binary operator has two input parameters of CustomList<t>.
+
+Returns
+-------
+CustomList<T>
+
+This - operator returns a new instance of CustomList<T>. The returned 
+instance is the contents of the first CustomList<T> parameter with 
+any item missing that appears in the second CustomList<T> parameter. 
+
+Example
+-------
+The following example shows how to use the - operator on a list of ints:
+
+Custom<int> one = new Custom<int>() {1,3,5};
+Custom<int> two = new Custom<int>() {2,4,6};
+
+Custom<int> result = one - two;
+
+foreach(int num in result)
+{
+	Console.Wright(num + ", ");
+}
+
+//prints to the screen
+//3, 5,
