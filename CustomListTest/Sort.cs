@@ -62,7 +62,7 @@ namespace CustomListTest
         public void Sort_CharList_ListOfbglp()
         {
             //Arrange
-            CustomList<char> intList = new CustomList<char>() { 'g', 'p', 'l', 'b' };
+            CustomList<char> intList = new CustomList<char>() { 'b', 'p', 'l', 'g' };
 
             string expected = "bglp";
             string actual = "";
@@ -85,6 +85,35 @@ namespace CustomListTest
             string actual = "";
 
             //Act
+            intList.Sort();
+            actual = intList.ToString();
+
+            //Assert
+            Assert.AreEqual(actual, expected);
+        }
+
+        [TestMethod]
+        public void Sort_PositiveInts_ListOfNumbers()
+        {
+            //Arrange
+            CustomList<int> intList = new CustomList<int>();
+
+            string expected = "0135679121824";
+            string actual = "";
+
+            //Act
+            for (int i = 0; i < 10; i++)
+            {
+                if((i % 2) >0)
+                {
+                    intList.Add(i);
+                }
+                else
+                {
+                    intList.Add(i*3);
+                }
+            }
+            
             intList.Sort();
             actual = intList.ToString();
 

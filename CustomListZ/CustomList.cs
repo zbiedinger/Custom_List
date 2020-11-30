@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CustomListZ
 {
-    public class CustomList<T> : IEnumerable, IComparable
+    public class CustomList<T> : IEnumerable where T: IComparable
     {
         //Member Variables
         int count;
@@ -225,68 +225,22 @@ namespace CustomListZ
             }
         }
 
+        //sorts the elements in a custom list
         public void Sort()
         {
-            //T[] temp = new T[Count];
-            //int position = Count-1;
-            //for (int i = 0; i < Count; i++)
-            //{
-            //    temp[i] = _items[position];
-            //    position--;
-            //}
-            //_items = temp;
+            for (int j = count - 1; j > 0; j--)
+            {
+                for (int i = 0; i < j; i++)
+                {
+                    if (_items[i].CompareTo(_items[i + 1]) > 0)
+                    {
+                        T tempSpot = _items[i];
+                        _items[i] = _items[i + 1];
+                        _items[i + 1] = tempSpot;
+                    }
+                }
+            }
         }
-
-        //Contract for Icomparable
-        public int CompareTo(object obj)
-        {
-            throw new NotImplementedException();
-
-        }
-
-        //public int CompareTo(CustomList<T> actual)
-        //{
-        //    int result = -1;
-
-        //    if (Count == actual.Count)
-        //    {
-        //        for (int i = 0; i < Count; i++)
-        //        {
-        //            //if(_items[i] == actual[i])
-        //            //{
-
-        //            //}
-        //            //else
-        //            //{
-        //            //    result = -1;
-        //            //}
-        //        }
-        //        result = 0;
-        //    }
-        //    else if (Count < actual.Count)
-        //    {
-        //        result = 1;
-        //    }
-        //    else if (Count < actual.Count)
-        //    {
-        //        result = -1;
-        //    }
-
-        //    return result;
-
-
-
-
-
-        //    char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
-
-        //    for (int i = 1; i < 21; i++)
-        //    {
-        //        {
-        //            //newBoard[0, i] = "  " + alpha[i - 1];
-        //        }
-        //    }
-        //}
     }
 }
 
