@@ -225,17 +225,30 @@ namespace CustomListZ
             }
         }
 
+        public void Sort()
+        {
+            //T[] temp = new T[Count];
+            //int position = Count-1;
+            //for (int i = 0; i < Count; i++)
+            //{
+            //    temp[i] = _items[position];
+            //    position--;
+            //}
+            //_items = temp;
+        }
+
         //Contract for Icomparable
         public int CompareTo(object obj)
         {
             throw new NotImplementedException();
+
         }
 
         //public int CompareTo(CustomList<T> actual)
         //{
         //    int result = -1;
 
-        //    if(Count == actual.Count)
+        //    if (Count == actual.Count)
         //    {
         //        for (int i = 0; i < Count; i++)
         //        {
@@ -260,6 +273,19 @@ namespace CustomListZ
         //    }
 
         //    return result;
+
+
+
+
+
+        //    char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
+
+        //    for (int i = 1; i < 21; i++)
+        //    {
+        //        {
+        //            //newBoard[0, i] = "  " + alpha[i - 1];
+        //        }
+        //    }
         //}
     }
 }
